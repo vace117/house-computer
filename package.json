@@ -1,0 +1,25 @@
+{
+  "name": "house-computer",
+  "version": "1.0.0",
+  "description": "Listens for the word \"computer\" and then recognizes verbal commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export GOOGLE_APPLICATION_CREDENTIALS=./Google-API-Credentials.json; node index.js",
+    "debug": "DEBUG=record node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vace117/house-computer.git"
+  },
+  "author": "Val Blant",
+  "bugs": {
+    "url": "https://github.com/vace117/house-computer/issues"
+  },
+  "homepage": "https://github.com/vace117/house-computer#readme",
+  "dependencies": {
+    "log-timestamp": "^0.3.0",
+    "play-sound": "^1.1.3",
+    "sonus": "^1.0.3"
+  }
+}
