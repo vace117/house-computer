@@ -6,11 +6,18 @@ const Sonus = require('sonus')
 const speech = require('@google-cloud/speech')
 const client = new speech.SpeechClient()
 
-const hotwords = [{ 
-    file: 'models/computer.pmdl', 
+const hotwords = [
+  { 
+    file: 'models/computer-kelly.pmdl', 
     hotword: 'computer', 
-    sensitivity: 0.4
-}]
+    sensitivity: 0.37
+  },
+  { 
+    file: 'models/computer-val.pmdl', 
+    hotword: 'computer', 
+    sensitivity: 0.3
+  }
+]
 const sonus = Sonus.init({ hotwords }, client)
 
 const mp3Player = require('play-sound')({
@@ -28,7 +35,7 @@ sonus
     })
 
     .on('final-result', commandText => {
-        console.log(`Command received: \"${commandText}\"`)
+        console.log(`Command received: "${commandText}"`)
 
         HouseController.processCommand(commandText)
 

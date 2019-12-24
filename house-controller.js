@@ -6,16 +6,21 @@ const mp3Player = require('play-sound')({
 
 const _ = require('underscore')
 
-const COMMANDS = require('./command-definitions')
+const COMMANDS = require('./commands')
 
 module.exports = {
     processCommand: (commandText) => {
       
-      const commandData = COMMANDS[commandText];
+      const commandData = COMMANDS[commandText.toLowerCase()];
       if ( !_.isEmpty(commandData) ) {
-        console.log(`    Executing: ${commandData.script}`);
-        mp3Player.play(commandData.sound)
-        spawnSync(commandData.script);
+        if ( commandData.sound ) {
+          mp3Player.play(commandData.sound)
+        }
+
+        if ( commandData.script ) {
+          console.log(`    Executing: ${commandData.script}`);
+          spawnSync(commandData.script);
+        }
       }
       else {
         console.log("    Not sure what to do...")
