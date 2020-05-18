@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: DECOMISSION!
+
 docker run -it \
     -v "$HOME:$HOME" \
     -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse \

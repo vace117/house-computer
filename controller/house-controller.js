@@ -1,10 +1,23 @@
+/**
+ * This is The House. 
+ * 
+ * Accepts textual commands and executes them for realz. 
+ */
+
+'use strict';
+
+const _ = require('underscore')
+
+// Worker processes are forked
+//
 const { spawnSync } = require( 'child_process' )
 
+// MP3 Player
+//
 const mp3Player = require('play-sound')({
     player: 'play'
 })
 
-const _ = require('underscore')
 
 const COMMANDS = require('./commands')
 
