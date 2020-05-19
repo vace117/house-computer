@@ -48,6 +48,11 @@ module.exports = {
     script: `${LIGHT_COMMANDS_ROOT}/night_mode_off.sh`
   },
 
+  TERMINATE_PLAYBACK: {
+    sound: STANDARD_COMPUTER_BEEP,
+    script: `${LIGHT_COMMANDS_ROOT}/kill_playback.sh`
+  },
+
   RED_ALERT: {
     sound: 'sounds/tng_red_alert1.mp3',
     script: `${LIGHT_COMMANDS_ROOT}/red_alert.sh`

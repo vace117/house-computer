@@ -24,6 +24,9 @@ module.exports = {
 
     "night light off":      ACTIONS['TEN_FORWARD_NIGHT_MODE_OFF'],
 
+    "terminate playback":   ACTIONS['TERMINATE_PLAYBACK'],
+    "terminate blockback":  ACTIONS['TERMINATE_PLAYBACK'],
+
     "red alert":            ACTIONS['RED_ALERT'],
 
     "dance alert":          ACTIONS['DANCE_ALERT'],
