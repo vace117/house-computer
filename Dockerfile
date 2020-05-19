@@ -33,12 +33,15 @@ COPY docker/client.conf /etc/pulse/client.conf
 
 # This should match the host's user (both name and ID), or PulseAudio won't work.
 #
-RUN groupadd -g 1000 val
-RUN useradd -g val -G audio -u 1000 val
+ARG USER_NAME="val"
+ARG USER_ID=1000
+
+RUN groupadd -g ${USER_ID} ${USER_NAME}
+RUN useradd -g ${USER_NAME} -G audio -u ${USER_ID} ${USER_NAME}
 
 ENV PROJECT_DIR="/opt/house-computer"
-RUN mkdir ${PROJECT_DIR} && chown -R val:val ${PROJECT_DIR}
-USER val
+RUN mkdir ${PROJECT_DIR} && chown -R ${USER_NAME}:${USER_NAME} ${PROJECT_DIR}
+USER ${USER_NAME}
 WORKDIR ${PROJECT_DIR}
 
 COPY command-processor ${PROJECT_DIR}/command-processor
