@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd $PROJECT_DIR/porcupine
+DIR=`dirname "$(readlink -f "$0")"`
+
+cd "$DIR/.."
 source .venv/bin/activate
 
 echo "Python environment initialized to:"

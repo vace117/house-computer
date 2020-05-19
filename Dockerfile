@@ -40,13 +40,14 @@ RUN groupadd -g ${USER_ID} ${USER_NAME}
 RUN useradd -g ${USER_NAME} -G audio -u ${USER_ID} ${USER_NAME}
 
 ENV PROJECT_DIR="/opt/house-computer"
-RUN mkdir ${PROJECT_DIR} && chown -R ${USER_NAME}:${USER_NAME} ${PROJECT_DIR}
-USER ${USER_NAME}
-WORKDIR ${PROJECT_DIR}
-
+RUN mkdir ${PROJECT_DIR}
 COPY command-processor ${PROJECT_DIR}/command-processor
 COPY porcupine ${PROJECT_DIR}/porcupine
 COPY README.md ${PROJECT_DIR}
 COPY docker/entrypoint.sh ${PROJECT_DIR}
+RUN chown -R ${USER_NAME}:${USER_NAME} ${PROJECT_DIR}
+
+USER ${USER_NAME}
+WORKDIR ${PROJECT_DIR}
 
 ENTRYPOINT ${PROJECT_DIR}/entrypoint.sh

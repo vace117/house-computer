@@ -9,5 +9,5 @@ printf "\n\n\
     \n\n\n
 "
 
-npm start
-#/bin/bash
+#npm start
+/bin/bash
