@@ -26,6 +26,8 @@ module.exports = {
       
       const commandData = COMMANDS[commandText.toLowerCase()];
       if ( !_.isEmpty(commandData) ) {
+        mp3Player.play('sounds/computerbeep_13.mp3')
+
         if ( commandData.sound ) {
           mp3Player.play(commandData.sound)
         }
