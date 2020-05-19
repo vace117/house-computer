@@ -37,7 +37,7 @@ module.exports = {
       }
       else {
         console.log("    Not sure what to do...")
-        mp3Player.play('sounds/denybeep1.mp3')        
+        mp3Player.play('sounds/denybeep1_quiet.mp3')        
       }
       
     }
