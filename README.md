@@ -1,6 +1,10 @@
 # House Computer
 The goal of this project is to provide offline wake word detection, combined with cloud-powered arbitrary voice command processing, combined with a controller that can process and execute home automation tasks based on textual commands.
 
+## Setup
+You must setup a Google Cloud account, enable Speech-to-Text API and download your `Google-API-Credentials.json` file into `command-processor/google-speech` directory. Details of the registration process are described here:
+https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries
+
 ## Usage
 ```
 $ ./start_local_house_computer.sh
