@@ -1,0 +1,28 @@
+{
+  "name": "house-computer",
+  "version": "1.1.0",
+  "author": "Val Blant",
+  "description": "Converts verbal commands to text and executes various home automation tasks.",
+  "main": "main.js",
+  "scripts": {
+    "start": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; node main.js",
+    "debug": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; export DEBUG='record,hauz:google,hauz:mic'; node main.js"
+  },
+  "dependencies": {
+    "@google-cloud/speech": "^2.1.2",
+    "express": "^4.17.1",
+    "log-timestamp": "^0.3.0",
+    "node-record-lpcm16": "^1.0.1",
+    "play-sound": "^1.1.3",
+    "system-sleep": "^1.3.6",
+    "underscore": "^1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vace117/house-computer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vace117/house-computer/issues"
+  },
+  "homepage": "https://github.com/vace117/house-computer#readme"
+}
