@@ -16,6 +16,9 @@ else
   echo "Python environment already exists."
 fi
 
+echo
+echo
+
 # Setup NodeJS environment
 #
 cd $DIR/command-processor
