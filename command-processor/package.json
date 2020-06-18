@@ -6,10 +6,11 @@
   "main": "main.js",
   "scripts": {
     "start": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; node main.js",
-    "debug": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; export DEBUG='record,hauz:google,hauz:mic'; node main.js"
+    "debug": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; export DEBUG='record,hauz:google,hauz:mic'; node main.js",
+    "debugGoogle": "export GOOGLE_APPLICATION_CREDENTIALS=./google-speech/Google-API-Credentials.json; export DEBUG='hauz:google,hauz:mic'; node google-speech/_debug/debugGoogleCloud.js"
   },
   "dependencies": {
-    "@google-cloud/speech": "^2.1.2",
+    "@google-cloud/speech": "^4.1.0",
     "express": "^4.17.1",
     "log-timestamp": "^0.3.0",
     "node-record-lpcm16": "^1.0.1",
