@@ -15,7 +15,7 @@ module.exports = {
 
   TEN_FORWARD_LIGHTS_FULL: {
     sound: STANDARD_COMPUTER_BEEP,
-    script: `${LIGHT_COMMANDS_ROOT}/relax.sh`
+    script: `${LIGHT_COMMANDS_ROOT}/lights_full.sh`
   },
 
   TEN_FORWARD_PORT_LIGHTS_OFF: {
