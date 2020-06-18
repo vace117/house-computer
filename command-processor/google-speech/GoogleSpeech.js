@@ -150,6 +150,8 @@ function _startGoogleTimeoutTimer() {
         if ( this.streamingInd ) {
             console.log("Terminating current command b/c it seems to be hanging...")
             this.stopStreaming();
+
+            this.recognizedTextCallback("COMMAND RECOGNITION ERROR");
         }
     }, SPEECH_RECOGNITION_TIMEOUT_MILLIS);
 }
