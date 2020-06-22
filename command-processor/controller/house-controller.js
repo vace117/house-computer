@@ -21,7 +21,13 @@ const mp3Player = require('play-sound')({
 
 const COMMANDS = require('./commands')
 
-var notSureWhatToDoAlreadyPlayed = false;
+var notSureWhatToDoSoundAlreadyPlayed = false;
+function _unlockNotSureWhatToDoSoundAfterTime( seconds ) {
+  setTimeout( () => {
+    notSureWhatToDoSoundAlreadyPlayed = false
+  }, seconds * 1000);
+}
+
 
 module.exports = {
     processCommand: (commandText) => {
@@ -46,12 +52,11 @@ module.exports = {
         // b/c of 2 events happening at the same time - watchdog timeout and 
         // a partial command text from Google
         //
-        if ( !notSureWhatToDoAlreadyPlayed ) {
-          mp3Player.play('sounds/denybeep1_quiet.mp3')  
-          notSureWhatToDoAlreadyPlayed = true;      
-        }
-        else {
-          notSureWhatToDoAlreadyPlayed = false;
+        if ( !notSureWhatToDoSoundAlreadyPlayed ) {
+          notSureWhatToDoSoundAlreadyPlayed = true;
+
+            mp3Player.play('sounds/denybeep1_quiet.mp3');
+            _unlockNotSureWhatToDoSoundAfterTime(3);
         }
       }
       

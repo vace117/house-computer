@@ -10,4 +10,4 @@ python --version
 echo
 pip list
 
-python house_computer.py --keywords computer --sensitivities 0.0001
+python house_computer.py --keywords computer --sensitivities 0.01
