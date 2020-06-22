@@ -21,6 +21,8 @@ const mp3Player = require('play-sound')({
 
 const COMMANDS = require('./commands')
 
+var notSureWhatToDoAlreadyPlayed = false;
+
 module.exports = {
     processCommand: (commandText) => {
       
@@ -39,7 +41,18 @@ module.exports = {
       }
       else {
         console.log("    Not sure what to do...")
-        mp3Player.play('sounds/denybeep1_quiet.mp3')        
+
+        // This is basically a latch that prevents double-sound when we get here
+        // b/c of 2 events happening at the same time - watchdog timeout and 
+        // a partial command text from Google
+        //
+        if ( !notSureWhatToDoAlreadyPlayed ) {
+          mp3Player.play('sounds/denybeep1_quiet.mp3')  
+          notSureWhatToDoAlreadyPlayed = true;      
+        }
+        else {
+          notSureWhatToDoAlreadyPlayed = false;
+        }
       }
       
     }
